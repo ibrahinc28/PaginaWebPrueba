@@ -41,6 +41,28 @@ function mostrarProductos(lista) {
     });
 }
 
+document.getElementById('product-list').addEventListener('click', function(e) {
+    if (e.target.tagName === 'IMG') {
+        const modal = document.getElementById('modal-img');
+        const modalImg = document.getElementById('modal-img-src');
+        modal.style.display = "block";
+        modalImg.src = e.target.src;
+        modalImg.alt = e.target.alt || "Imagen ampliada";
+    }
+});
+
+document.getElementById('modal-close').addEventListener('click', function(){
+    document.getElementById('modal-img').style.display = "none";
+});
+
+// También cerrar modal si se hace clic fuera de la imagen
+window.addEventListener('click', function(event) {
+        const modal = document.getElementById('modal-img');
+        if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
 document.addEventListener('click', function(event) {
     if (event.target.classList.contains('btn-comprar')) {
     const productId = event.target.getAttribute('data-id');
