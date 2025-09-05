@@ -35,10 +35,19 @@ function mostrarProductos(lista) {
                 <h3>${prod.nombre}</h3>
                 <p>${prod.descripcion}</p>
                 <span class="price">${prod.precio.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })}</span>
+                <button class="btn-comprar" data-id="${prod.id}">Comprar</button>
             </div>
         `;
     });
 }
+
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('btn-comprar')) {
+    const productId = event.target.getAttribute('data-id');
+        alert(`Producto ${productId} agregado al carrito.`);
+    }
+});
+
 
 mostrarProductos(productos);
 
