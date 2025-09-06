@@ -35,7 +35,8 @@ function mostrarProductos(lista) {
                 <h3>${prod.nombre}</h3>
                 <p>${prod.descripcion}</p>
                 <span class="price">${prod.precio.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })}</span>
-                <button class="btn-comprar" data-id="${prod.id}">Comprar</button>
+                <button class="btn-comprar" data-id="${prod.codigo,prod.nombre}">Comprar</button>
+                <button class="btn-añadir" data-id="${prod.codigo,prod.nombre}">Añadir al carrito</button>
             </div>
         `;
     });
@@ -64,9 +65,9 @@ window.addEventListener('click', function(event) {
 });
 
 document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('btn-comprar')) {
+    if (event.target.classList.contains('btn-añadir')) {
     const productId = event.target.getAttribute('data-id');
-        alert(`Producto ${productId} agregado al carrito.`);
+        alert(`Producto ${productId} agregado al carrito de compras.`);
     }
 });
 

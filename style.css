@@ -62,6 +62,18 @@ header {
     font-weight: bold;
 }
 
+.product-card .btn-comprar{
+    color:#1E90FF;
+    width: 50%;
+    height: 10%;
+    font-size: 14px;
+}
+.product-card .btn-añadir{
+    color:#1E90FF;
+    width: 50%;
+    height: 10%;
+    font-size: 14px;
+}
 #login-section {
     background-color: #1E90FF; 
     padding: 15px;
@@ -120,3 +132,4 @@ header {
     font-weight: bold;
     cursor: pointer;
 }
+
